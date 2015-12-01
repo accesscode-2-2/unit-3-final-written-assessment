@@ -193,7 +193,8 @@
 // refer to this url for json structure
 // https://api.instagram.com/v1/tags/nofilter/media/recent?client_id=ac0ee52ebb154199bfabfb15b498c067
 
-- (NSString *)returnTheLastStandardResultionImageURL:(NSDictionary *)JSON {
+- (NSString *)returnTheLastStandardResultionImageURL:(NSDictionary *)JSON
+{
     return [JSON[@"data"] lastObject][@"images"][@"standard_resultion"][@"url"];
 }
 
