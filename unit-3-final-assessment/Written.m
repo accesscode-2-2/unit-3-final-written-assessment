@@ -110,10 +110,10 @@
 // return the sum of all numbers between
 // 0 and 246 INCLUDING 246.
 
-- (NSInteger)returnTheSumOf0To246
+- (NSInteger)returnTheSumOf0ToX:(NSInteger)x
 {
     NSInteger sum = 0;
-    for (int i = 0; i <= 246; i++) {
+    for (int i = 0; i <= x; i++) {
         sum += i;
     }
     return sum;
@@ -121,12 +121,12 @@
 
 
 // return the sum of all even numbers between
-// 0 and 1000 NOT INCLUDING 1000
+// 0 and x NOT INCLUDING x
 
-- (NSInteger)returnTheSumOfAllEvenNumbersBetween0And1000
+- (NSInteger)returnTheSumOfAllEvenNumbersBetween0AndX:(NSInteger)x
 {
     NSInteger sum = 0;
-    for (int i = 0; i < 1000; i++) {
+    for (int i = 0; i < x; i++) {
         if (i % 2 == 0) {
             sum += i;
         }
@@ -149,10 +149,12 @@
 //   "dinosaur"
 //   "catfish"
 //   "spoon"
+//   @123
+//   @[]
 
 - (NSArray *)returnAnArrayWithTheDescribedItems
 {
-    return @[@"dinosaur", @"catfish", @"spoon"];
+    return @[@"dinosaur", @"catfish", @"spoon", @123, @[]];
 }
 
 
@@ -169,11 +171,11 @@
 // result of joining arrayOne with arrayTwo
 //
 // eg.
-// arrayOne = [1, 2, 3];
-// arrayTwo = [4, 5, 6];
+// arrayOne = [@1, @2, @3];
+// arrayTwo = [@4, @5, @6];
 //
 // You would return the following array:
-// [1, 2, 3, 4, 5, 6];
+// [@1, @2, @3, @4, @5, @6];
 
 - (NSArray *)joinArrayOne:(NSArray *)arrayOne
              withArrayTwo:(NSArray *)arrayTwo
@@ -195,7 +197,11 @@
 
 - (NSString *)returnTheLastStandardResultionImageURL:(NSDictionary *)JSON
 {
-    return [JSON[@"data"] lastObject][@"images"][@"standard_resultion"][@"url"];
+    NSArray *data = JSON[@"data"];
+    NSDictionary *lastEntry = [data lastObject];
+    NSDictionary *images = [lastEntry objectForKey:@"images"];
+    NSDictionary *standard = [images objectForKey:@"standard_resolution"];
+    return [standard objectForKey:@"url"];
 }
 
 

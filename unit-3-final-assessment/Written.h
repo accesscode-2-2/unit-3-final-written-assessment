@@ -36,9 +36,9 @@
 
 - (BOOL)returnYESIfXIsEvenAndNOIfXIsOdd:(NSInteger)x;
 
-- (NSInteger)returnTheSumOf0To246;
+- (NSInteger)returnTheSumOf0ToX:(NSInteger)x;
 
-- (NSInteger)returnTheSumOfAllEvenNumbersBetween0And1000;
+- (NSInteger)returnTheSumOfAllEvenNumbersBetween0AndX:(NSInteger)x;
 
 - (id)returnThe5thElementInTheArray:(NSArray *)theArray;
 
