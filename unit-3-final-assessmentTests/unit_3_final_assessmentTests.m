@@ -8,6 +8,15 @@
 
 #import <XCTest/XCTest.h>
 #import "Written.h"
+#import <objc/message.h>
+
+#define RT_INT @"i"
+#define RT_NSINT @"q"
+#define RT_NSUINT @"Q"
+#define RT_FLOAT @"f"
+#define RT_BOOL @"B"
+#define RT_CGFLOAT @"d"
+#define RT_CHAR @"c"
 
 @interface unit_3_final_assessmentTests : XCTestCase
 
@@ -29,6 +38,10 @@
 
 - (void)testReturnAnyPositiveInteger
 {
+    Method method = [self aMethodForSelector:@selector(returnAnyPositiveInteger)];
+    NSString *rt = [self returnTypeForMethod:method];
+    
+    XCTAssertTrue([rt isEqualToString:RT_NSINT] || [rt isEqualToString:RT_NSUINT]);
     XCTAssertTrue([self.written returnAnyPositiveInteger] > 0);
 }
 
@@ -195,5 +208,18 @@
     XCTAssertTrue([dict2[@"weather"] isEqualToString:@"rainy"]);
 }
 
+# pragma -
+# pragma mark // private helpers
+
+- (NSString *)returnTypeForMethod:(Method)method {
+    char * returnType = method_copyReturnType(method);
+    NSString *str = [NSString stringWithCString:returnType encoding:NSUTF8StringEncoding];
+    free(returnType);
+    return str;
+}
+
+- (Method)aMethodForSelector:(SEL)selector {
+    return class_getInstanceMethod([Written class], selector);
+}
 
 @end
