@@ -17,7 +17,6 @@
 
 @implementation C4QViewController
 
-
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.destinationViewController isKindOfClass:[C4QColorPickerViewController class]]) {
         C4QColorPickerViewController *viewController = segue.destinationViewController;
