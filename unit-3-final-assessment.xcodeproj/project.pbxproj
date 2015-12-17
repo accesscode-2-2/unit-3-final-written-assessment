@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		0BE26BFE5C1777D0343885AA /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 29580D5D00DD4901586C0702 /* libPods.a */; };
+		8D01672E1C235EE500D3EB39 /* C4QCatFactTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D01672D1C235EE500D3EB39 /* C4QCatFactTableViewCell.m */; };
+		8D0167311C23643100D3EB39 /* C4QSavedCatFactsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D0167301C23643100D3EB39 /* C4QSavedCatFactsTableViewController.m */; };
+		8D0167341C236B7D00D3EB39 /* C4QCatDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D0167331C236B7D00D3EB39 /* C4QCatDetailViewController.m */; };
 		8D5AB0981C0CAB6B00792242 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D5AB0971C0CAB6B00792242 /* main.m */; };
 		8D5AB09B1C0CAB6B00792242 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D5AB09A1C0CAB6B00792242 /* AppDelegate.m */; };
 		8D5AB09E1C0CAB6B00792242 /* C4QViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D5AB09D1C0CAB6B00792242 /* C4QViewController.m */; };
@@ -35,6 +38,12 @@
 /* Begin PBXFileReference section */
 		29580D5D00DD4901586C0702 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		47AB5E85138A0F6F6FACE671 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		8D01672C1C235EE500D3EB39 /* C4QCatFactTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = C4QCatFactTableViewCell.h; sourceTree = "<group>"; };
+		8D01672D1C235EE500D3EB39 /* C4QCatFactTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = C4QCatFactTableViewCell.m; sourceTree = "<group>"; };
+		8D01672F1C23643100D3EB39 /* C4QSavedCatFactsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = C4QSavedCatFactsTableViewController.h; sourceTree = "<group>"; };
+		8D0167301C23643100D3EB39 /* C4QSavedCatFactsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = C4QSavedCatFactsTableViewController.m; sourceTree = "<group>"; };
+		8D0167321C236B7D00D3EB39 /* C4QCatDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = C4QCatDetailViewController.h; sourceTree = "<group>"; };
+		8D0167331C236B7D00D3EB39 /* C4QCatDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = C4QCatDetailViewController.m; sourceTree = "<group>"; };
 		8D5AB0931C0CAB6B00792242 /* unit-3-final-assessment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "unit-3-final-assessment.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D5AB0971C0CAB6B00792242 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		8D5AB0991C0CAB6B00792242 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -167,6 +176,12 @@
 				8D625EDB1C23144F00D0BE17 /* C4QColorPickerViewController.m */,
 				8D95F5161C23430100EA9741 /* C4QCatsTableViewController.h */,
 				8D95F5171C23430100EA9741 /* C4QCatsTableViewController.m */,
+				8D01672C1C235EE500D3EB39 /* C4QCatFactTableViewCell.h */,
+				8D01672D1C235EE500D3EB39 /* C4QCatFactTableViewCell.m */,
+				8D01672F1C23643100D3EB39 /* C4QSavedCatFactsTableViewController.h */,
+				8D0167301C23643100D3EB39 /* C4QSavedCatFactsTableViewController.m */,
+				8D0167321C236B7D00D3EB39 /* C4QCatDetailViewController.h */,
+				8D0167331C236B7D00D3EB39 /* C4QCatDetailViewController.m */,
 				8D5AB09F1C0CAB6B00792242 /* Main.storyboard */,
 				8D5AB0A71C0CAB6B00792242 /* LaunchScreen.storyboard */,
 				8D5AB0A51C0CAB6B00792242 /* Assets.xcassets */,
@@ -326,11 +341,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				8D625EDC1C23144F00D0BE17 /* C4QColorPickerViewController.m in Sources */,
+				8D0167341C236B7D00D3EB39 /* C4QCatDetailViewController.m in Sources */,
 				8D95F5181C23430100EA9741 /* C4QCatsTableViewController.m in Sources */,
 				8D5AB0A41C0CAB6B00792242 /* unit_3_final_assessment.xcdatamodeld in Sources */,
+				8D01672E1C235EE500D3EB39 /* C4QCatFactTableViewCell.m in Sources */,
 				8D74A0701C0E059C00EDFE44 /* Written.m in Sources */,
 				8D625ED91C23122200D0BE17 /* C4QRootViewController.m in Sources */,
 				8D5AB09E1C0CAB6B00792242 /* C4QViewController.m in Sources */,
+				8D0167311C23643100D3EB39 /* C4QSavedCatFactsTableViewController.m in Sources */,
 				8D5AB09B1C0CAB6B00792242 /* AppDelegate.m in Sources */,
 				8D5AB0981C0CAB6B00792242 /* main.m in Sources */,
 			);

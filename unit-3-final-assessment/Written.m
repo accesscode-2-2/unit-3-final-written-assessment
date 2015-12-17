@@ -13,41 +13,41 @@
 
 // return any positive integer
 
-- (NSInteger)returnAnyPositiveInteger
+- (void)returnAnyPositiveInteger
 {
-    return 4;
+    
 }
 
 
 // return any positive integer greater than 1000
 
-- (NSInteger)returnAnyPositiveIntegerGreaterThan1000
+- (void)returnAnyPositiveIntegerGreaterThan1000
 {
-    return 1200;
+    
 }
 
 
 // return any negative float
 
-- (CGFloat)returnAnyNegativeFloat
+- (void)returnAnyNegativeFloat
 {
-    return -3.14;
+    
 }
 
 
 // return a truthy BOOL
 
-- (BOOL)returnATruthyBool
+- (void)returnATruthyBool
 {
-    return YES;
+    
 }
 
 
 // return the character 'k'
 
-- (char)returnTheCharacterK
+- (void)returnTheCharacterK
 {
-    return 'k';
+    
 }
 
 
@@ -59,7 +59,7 @@
 - (NSInteger)returnTheSumOfIntegerA:(NSInteger)integerA
                         andIntegerB:(NSInteger)integerB
 {
-    return integerA + integerB;
+    return 0;
 }
 
 
@@ -68,7 +68,7 @@
 - (CGFloat)returnTheDifferenceBetweenFloatA:(CGFloat)floatA
                                     andFloatB:(CGFloat)floatB
 {
-    return floatA - floatB;
+    return 0;
 }
 
 
@@ -76,7 +76,7 @@
 
 - (CGFloat)returnTheProductOfXAnd100:(CGFloat)x
 {
-    return x * 100.0;
+    return 0;
 }
 
 
@@ -85,7 +85,7 @@
 - (CGFloat)returnTheQuotientOfFloatA:(CGFloat)floatA
                            andFloatB:(CGFloat)floatB
 {
-    return floatA / floatB;
+    return 0;
 }
 
 
@@ -94,7 +94,7 @@
 
 - (BOOL)returnYESIfXIsGreaterThan10AndNoIfXIsLessThanOrEqualTo10:(NSInteger)x
 {
-    return x > 10 ? YES : NO;
+    return YES;
 }
 
 
@@ -103,7 +103,7 @@
 
 - (BOOL)returnYESIfXIsEvenAndNOIfXIsOdd:(NSInteger)x
 {
-    return x % 2 == 0;
+    return YES;
 }
 
 
@@ -112,11 +112,7 @@
 
 - (NSInteger)returnTheSumOf0ToX:(NSInteger)x
 {
-    NSInteger sum = 0;
-    for (int i = 0; i <= x; i++) {
-        sum += i;
-    }
-    return sum;
+    return 0;
 }
 
 
@@ -125,13 +121,7 @@
 
 - (NSInteger)returnTheSumOfAllEvenNumbersBetween0AndX:(NSInteger)x
 {
-    NSInteger sum = 0;
-    for (int i = 0; i < x; i++) {
-        if (i % 2 == 0) {
-            sum += i;
-        }
-    }
-    return sum;
+    return 0;
 }
 
 /* ======================= */
@@ -141,7 +131,7 @@
 
 - (id)returnThe5thElementInTheArray:(NSArray *)theArray
 {
-    return [theArray objectAtIndex:4];
+    return nil;
 }
 
 
@@ -154,7 +144,7 @@
 
 - (NSArray *)returnAnArrayWithTheDescribedItems
 {
-    return @[@"dinosaur", @"catfish", @"spoon", @123, @[]];
+    return @[];
 }
 
 
@@ -163,7 +153,7 @@
 
 - (void)addBalloonAtIndexTwo:(NSMutableArray *)array
 {
-    [array insertObject:@"balloon" atIndex:2];
+    
 }
 
 
@@ -180,7 +170,7 @@
 - (NSArray *)joinArrayOne:(NSArray *)arrayOne
              withArrayTwo:(NSArray *)arrayTwo
 {
-    return [arrayOne arrayByAddingObjectsFromArray:arrayTwo];
+    return @[];
 }
 
 
@@ -188,7 +178,7 @@
 
 - (id)returnTheObjectForTheKeyMountain:(NSDictionary *)dictionary
 {
-    return dictionary[@"mountain"];
+    return nil;
 }
 
 
@@ -197,11 +187,7 @@
 
 - (NSString *)returnTheLastStandardResultionImageURL:(NSDictionary *)JSON
 {
-    NSArray *data = JSON[@"data"];
-    NSDictionary *lastEntry = [data lastObject];
-    NSDictionary *images = [lastEntry objectForKey:@"images"];
-    NSDictionary *standard = [images objectForKey:@"standard_resolution"];
-    return [standard objectForKey:@"url"];
+    return @"";
 }
 
 
@@ -211,8 +197,7 @@
 
 - (void)manipulateTheDictionary:(NSMutableDictionary *)aDictionary
 {
-    [aDictionary removeObjectForKey:@"carpet"];
-    [aDictionary setObject:@"rainy" forKey:@"weather"];
+    
 }
 
 
