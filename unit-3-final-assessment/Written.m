@@ -15,7 +15,7 @@
 
 - (NSInteger)returnAnyPositiveInteger
 {
-    return 1;
+    return 4;
 }
 
 
@@ -214,7 +214,6 @@
     [aDictionary removeObjectForKey:@"carpet"];
     [aDictionary setObject:@"rainy" forKey:@"weather"];
 }
-
 
 
 @end
