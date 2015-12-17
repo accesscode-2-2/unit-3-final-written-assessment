@@ -63,10 +63,10 @@
             </objects>
             <point key="canvasLocation" x="595" y="295"/>
         </scene>
-        <!--View Controller-->
+        <!--Color Picker View Controller-->
         <scene sceneID="cZw-QO-W5J">
             <objects>
-                <viewController id="Lli-Fk-jNo" sceneMemberID="viewController">
+                <viewController id="Lli-Fk-jNo" customClass="C4QColorPickerViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Y3d-yE-s3T"/>
                         <viewControllerLayoutGuide type="bottom" id="c1S-nY-gGW"/>
@@ -82,6 +82,9 @@
                                     <constraint firstAttribute="width" constant="80" id="uXj-sL-KLl"/>
                                 </constraints>
                                 <state key="normal" title="Green"/>
+                                <connections>
+                                    <action selector="greenButtonTapped:" destination="Lli-Fk-jNo" eventType="touchUpInside" id="45H-Ge-4M7"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jzl-Ef-dc3">
                                 <rect key="frame" x="260" y="218" width="80" height="44"/>
@@ -90,6 +93,9 @@
                                     <constraint firstAttribute="width" constant="80" id="aCO-qS-B1i"/>
                                 </constraints>
                                 <state key="normal" title="Red"/>
+                                <connections>
+                                    <action selector="redButtonTapped:" destination="Lli-Fk-jNo" eventType="touchUpInside" id="kd4-66-zc4"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fNY-OU-udD">
                                 <rect key="frame" x="260" y="338" width="80" height="44"/>
@@ -98,6 +104,9 @@
                                     <constraint firstAttribute="width" constant="80" id="UZG-oE-mKk"/>
                                 </constraints>
                                 <state key="normal" title="Blue"/>
+                                <connections>
+                                    <action selector="blueButtonTapped:" destination="Lli-Fk-jNo" eventType="touchUpInside" id="a9Q-Uq-7XR"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

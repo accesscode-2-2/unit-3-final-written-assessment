@@ -16,6 +16,7 @@
 		8D5AB0A91C0CAB6B00792242 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D5AB0A71C0CAB6B00792242 /* LaunchScreen.storyboard */; };
 		8D5AB0B41C0CAB6B00792242 /* unit_3_final_assessmentTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D5AB0B31C0CAB6B00792242 /* unit_3_final_assessmentTests.m */; };
 		8D625ED91C23122200D0BE17 /* C4QRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D625ED81C23122200D0BE17 /* C4QRootViewController.m */; };
+		8D625EDC1C23144F00D0BE17 /* C4QColorPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D625EDB1C23144F00D0BE17 /* C4QColorPickerViewController.m */; };
 		8D74A0701C0E059C00EDFE44 /* Written.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D74A06F1C0E059C00EDFE44 /* Written.m */; };
 /* End PBXBuildFile section */
 
@@ -46,6 +47,8 @@
 		8D5AB0B51C0CAB6B00792242 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8D625ED71C23122200D0BE17 /* C4QRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = C4QRootViewController.h; sourceTree = "<group>"; };
 		8D625ED81C23122200D0BE17 /* C4QRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = C4QRootViewController.m; sourceTree = "<group>"; };
+		8D625EDA1C23144F00D0BE17 /* C4QColorPickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = C4QColorPickerViewController.h; sourceTree = "<group>"; };
+		8D625EDB1C23144F00D0BE17 /* C4QColorPickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = C4QColorPickerViewController.m; sourceTree = "<group>"; };
 		8D74A06E1C0E059C00EDFE44 /* Written.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Written.h; sourceTree = "<group>"; };
 		8D74A06F1C0E059C00EDFE44 /* Written.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Written.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -133,6 +136,8 @@
 				8D625ED81C23122200D0BE17 /* C4QRootViewController.m */,
 				8D5AB09C1C0CAB6B00792242 /* C4QViewController.h */,
 				8D5AB09D1C0CAB6B00792242 /* C4QViewController.m */,
+				8D625EDA1C23144F00D0BE17 /* C4QColorPickerViewController.h */,
+				8D625EDB1C23144F00D0BE17 /* C4QColorPickerViewController.m */,
 				8D5AB09F1C0CAB6B00792242 /* Main.storyboard */,
 				8D5AB0A71C0CAB6B00792242 /* LaunchScreen.storyboard */,
 				8D5AB0A51C0CAB6B00792242 /* Assets.xcassets */,
@@ -240,6 +245,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8D625EDC1C23144F00D0BE17 /* C4QColorPickerViewController.m in Sources */,
 				8D5AB0A41C0CAB6B00792242 /* unit_3_final_assessment.xcdatamodeld in Sources */,
 				8D74A0701C0E059C00EDFE44 /* Written.m in Sources */,
 				8D625ED91C23122200D0BE17 /* C4QRootViewController.m in Sources */,
