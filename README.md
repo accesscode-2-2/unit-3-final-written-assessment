@@ -13,13 +13,14 @@ The written part of the assessment is meant to test your understanding of the Ob
 **Topics covered**
 
 * Autolayout / Custom UI
-* IBAction / Storyboard segue
-* UITableView / UITableViewController / UITableViewCell
+* `IBAction` / Storyboard segue
+* `UITableView` / `UITableViewController` / `UITableViewCell`
 * Cats
 * Networking
 * Parsing JSON
 * Passing data b/w view controllers
-* UINavigationController
+* `UINavigationController`
+* `NSUserDefaults`
 
 **Bonus**
 
