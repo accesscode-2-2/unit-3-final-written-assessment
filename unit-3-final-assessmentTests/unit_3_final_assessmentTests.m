@@ -190,9 +190,8 @@
     NSURLSessionDataTask *task = [session dataTaskWithURL:url completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
         if (error == nil) {
             NSDictionary *json = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
-            
             NSString *result = [[[[json[@"data"] lastObject] objectForKey:@"images"] objectForKey:@"standard_resolution"] objectForKey:@"url"];
-            XCTAssertTrue([[self.written returnTheLastStandardResultionImageURL:json] isEqualToString:result]);
+            XCTAssertTrue([[self.written returnTheLastStandardResolutionImageURL:json] isEqualToString:result]);
             
             [expectation fulfill];
         } else {
@@ -224,8 +223,26 @@
     XCTAssertTrue([dict2[@"weather"] isEqualToString:@"rainy"]);
 }
 
+- (void)testExecuteBlock
+{
+    __block NSInteger i = 0;
+    void (^block)() = ^{
+        i++;
+    };
+    
+    [self.written executeTheProvidedBlock:block];
+    
+    XCTAssertTrue(i == 1);
+}
+
+- (void)testCreateAndReturnBlock
+{
+    NSInteger(^sum)(NSInteger, NSInteger) = [self.written createAndReturnABlockThatSumsTwoNumber];
+    XCTAssertTrue(sum(2, 5) == 7);
+}
+
 # pragma -
-# pragma mark // private helpers
+# pragma mark private helpers
 
 - (NSString *)returnTypeForMethod:(Method)method {
     char * returnType = method_copyReturnType(method);

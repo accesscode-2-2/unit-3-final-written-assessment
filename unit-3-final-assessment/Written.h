@@ -49,8 +49,12 @@
 - (NSArray *)joinArrayOne:(NSArray *)arrayOne
              withArrayTwo:(NSArray *)arrayTwo;
 
-- (NSString *)returnTheLastStandardResultionImageURL:(NSDictionary *)JSON;
+- (NSString *)returnTheLastStandardResolutionImageURL:(NSDictionary *)JSON;
 
 - (void)manipulateTheDictionary:(NSMutableDictionary *)aDictionary;
+
+- (void)executeTheProvidedBlock:(void(^)())completion;
+
+- (NSInteger(^)(NSInteger a, NSInteger b))createAndReturnABlockThatSumsTwoNumber;
 
 @end

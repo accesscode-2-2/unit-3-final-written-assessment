@@ -182,10 +182,12 @@
 }
 
 
+// Using the provided JSON, parse and return the 'last standard resolution image url'
+//
 // refer to this url for json structure
 // https://api.instagram.com/v1/tags/nofilter/media/recent?client_id=ac0ee52ebb154199bfabfb15b498c067
 
-- (NSString *)returnTheLastStandardResultionImageURL:(NSDictionary *)JSON
+- (NSString *)returnTheLastStandardResolutionImageURL:(NSDictionary *)JSON
 {
     return @"";
 }
@@ -196,6 +198,18 @@
 //  • Add the string @"rainy" for the key "weather"
 
 - (void)manipulateTheDictionary:(NSMutableDictionary *)aDictionary
+{
+    
+}
+
+- (void)executeTheProvidedBlock:(void (^)())completion
+{
+    
+}
+
+// ** BONUS **
+
+- (void)createAndReturnABlockThatReturnsTheSumsOfTwoNumber
 {
     
 }
