@@ -21,6 +21,7 @@ The written part of the assessment is meant to test your understanding of the Ob
 * Passing data b/w view controllers
 * `UINavigationController`
 * `NSUserDefaults`
+* Protocols / Delegation
 
 **Bonus**
 
