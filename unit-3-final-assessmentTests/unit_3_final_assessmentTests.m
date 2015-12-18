@@ -47,21 +47,37 @@
 
 - (void)testReturnAnyPositiveIntegerGreaterThan1000
 {
+    Method method = [self aMethodForSelector:@selector(returnAnyPositiveIntegerGreaterThan1000)];
+    NSString *rt = [self returnTypeForMethod:method];
+    
+    XCTAssertTrue([rt isEqualToString:RT_NSINT] || [rt isEqualToString:RT_NSUINT]);
     XCTAssertTrue([self.written returnAnyPositiveIntegerGreaterThan1000] > 1000);
 }
 
 - (void)testReturnAnyNegativeFloat
 {
+    Method method = [self aMethodForSelector:@selector(returnAnyNegativeFloat)];
+    NSString *rt = [self returnTypeForMethod:method];
+    
+    XCTAssertTrue([rt isEqualToString:RT_CGFLOAT]);
     XCTAssertTrue([self.written returnAnyNegativeFloat] < 0);
 }
 
 - (void)testReturnATruthyBool
 {
+    Method method = [self aMethodForSelector:@selector(returnATruthyBool)];
+    NSString *rt = [self returnTypeForMethod:method];
+    
+    XCTAssertTrue([rt isEqualToString:RT_BOOL]);
     XCTAssertTrue([self.written returnATruthyBool] == YES);
 }
 
 - (void)testReturnTheCharacterK
 {
+    Method method = [self aMethodForSelector:@selector(returnTheCharacterK)];
+    NSString *rt = [self returnTypeForMethod:method];
+    
+    XCTAssertTrue([rt isEqualToString:RT_CHAR]);
     XCTAssertTrue([self.written returnTheCharacterK] == 'k');
 }
 
