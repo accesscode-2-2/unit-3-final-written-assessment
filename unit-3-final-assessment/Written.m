@@ -276,13 +276,13 @@
 // returns the sum
 
 
-- (NSInteger(^)(NSInteger a, NSInteger b))createAndReturnABlockThatReturnsTheSumsOfTwoNumber
+- (NSInteger(^)(NSInteger a, NSInteger b))createAndReturnABlockThatSumsTwoNumber
 {
     
-    NSInteger (^sumbloc)(NSInteger firstInt, NSInteger secondInt) = ^NSInteger(NSInteger integerA, NSInteger integerB){
+    NSInteger (^sum)(NSInteger firstInt, NSInteger secondInt) = ^NSInteger(NSInteger integerA, NSInteger integerB){
         return integerA + integerB;
     };
-    return sumbloc;
+    return sum;
     
 }
 
