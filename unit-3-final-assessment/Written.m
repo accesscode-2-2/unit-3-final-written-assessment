@@ -56,7 +56,7 @@
 
 - (char)returnTheCharacterK
 {
-   char letterK = @"k";
+   char letterK = 'k';
  
     
     return letterK;
@@ -83,7 +83,7 @@
                                     andFloatB:(CGFloat)floatB
 {
     
-    NSInteger difference = floatB - floatA;
+    NSInteger difference = floatA-floatB ;
     
     return difference;
 }
@@ -114,9 +114,12 @@
 
 - (BOOL)returnYESIfXIsGreaterThan10AndNoIfXIsLessThanOrEqualTo10:(NSInteger)x
 {
-    x = 11;
-    
-    return YES;
+    if (x>10) {
+        return YES;
+    }
+    else{
+        return NO;
+    }
 }
 
 
@@ -126,9 +129,12 @@
 - (BOOL)returnYESIfXIsEvenAndNOIfXIsOdd:(NSInteger)x
 {
     
-    x=12;
-    
-    return YES;
+    if (x%2==0) {
+        return YES;
+    }
+    else {
+        return NO;
+    };
 }
 
 
@@ -140,7 +146,7 @@
     NSInteger sum = 0;
     for (NSInteger count = 0; count<=x; count++) {
         
-        sum = count + count +1;
+        sum = sum +count;
     }
     
     return sum;
@@ -158,7 +164,7 @@
     for (NSInteger count = 0; count<=x; count++) {
         
         if (count%2==0) {
-            sum = count + count +1;
+            sum = sum + count ;
 
         }
         else{
