@@ -290,10 +290,13 @@
 //    return anInt;
 //}
 
-- (NSInteger)createAndReturnABlockThatSumsTwoNumber:(NSInteger numberOne, NSInteger numberTwo (^)(NSInteger))blockSum {
+- (NSInteger)createAndReturnABlockThatSumsTwoNumber:(NSInteger) numberOne, NSInteger numberTwo (^)(NSInteger))blockSum {
 
-    return blockSum();
+    return 4;
 }
+- (NSInteger)(^damnBlock)(NSInteger, NSInteger) = ^(parameter, types, here) {
+    
+};
 
 
 @end
