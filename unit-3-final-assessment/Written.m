@@ -278,10 +278,25 @@
 
 // Create and return a block that takes 2 NSInteger parameters and
 // returns the sum
-- (void)createAndReturnABlockThatSumsTwoNumber
+
+
+
+
+
+
+
+- (NSInteger)createAndReturnABlockThatSumsTwoNumber
 {
-  
-    NSInteger(^)(NSInteger,NSInteger)
+    
+    NSInteger (^sum)(NSInteger, NSInteger) = ^(NSInteger firstValue, NSInteger secondValue)
+    {
+        return firstValue + secondValue;
+    };
+    
+   NSInteger sum2 =  sum(33,4);
+    NSLog(@"SUM! %ld", sum2);
+    return sum2;
+    
 }
 
 @end
