@@ -275,58 +275,18 @@
 
 
 // ** BONUS **
-//- (void)someMethodThatTakesABlock:(NSInteger (^)(NSInteger a, NSInteger b))blockName;
+
 // Create and return a block that takes 2 NSInteger parameters and
 // returns the sum
 
-//- (void)add:(NSInteger)a
-//      steps:(NSInteger)b;
-//- (NSInteger(^)(NSInteger a, NSInteger b))createAndReturnABlockThatSumsTwoNumber
-//{
-//    NSInteger (^addTwoValues)(NSInteger a, NSInteger b) =
-//    ^(NSInteger firstValue, NSInteger secondValue) {
-//        NSInteger sum = firstValue + secondValue;
-//        return sum;
-//    };
-//    NSInteger (^add)(NSInteger a, NSInteger b) =
-//    ^(NSInteger a, NSInteger b) {
-//        return 1 + 2;
-//    };
-//
-//    return ;
-
-
-//    NSInteger (^addTwoValues)(NSInteger a, NSInteger b) =
-//    ^(NSInteger a, NSInteger b) {
-//        NSInteger sum = a + b;
-//        return sum;
-//    };
+- (NSInteger(^)(NSInteger a, NSInteger b))createAndReturnABlockThatSumsTwoNumber
+{
+    NSInteger (^addTwoValues)(NSInteger a, NSInteger b) =
+    ^(NSInteger firstValue, NSInteger secondValue) {
+        NSInteger sum = firstValue + secondValue;
+        return sum;
+    };
     
-//    return addTwoValues(1, 2);
-//
-//    NSInteger result = addTwoValues(1,2);
-//
-//    return addTwoValues(1,2);
-
-
-
-//    ^ NSInteger (NSInteger firstValue, NSInteger secondValue) {
-//        return firstValue + secondValue;
-//    };
-
-//    void (^simpleBlock)(void) = ^{
-//        NSLog(@"This is a block");
-//    };
-//
+    return addTwoValues;
     
-//    - (NSInteger(^)(NSInteger a, NSInteger b))createAndReturnABlockThatSumsTwoNumber;
-    
-    
-
-//    [self someMethodThatTakesABlock:^NSInteger(NSInteger a, NSInteger b) {
-//        NSInteger sum = a + b;
-//        return sum;
-//    }];
-//}
-
-@end
+}@end
