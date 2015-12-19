@@ -156,15 +156,16 @@
 - (id)returnThe5thElementInTheArray:(NSArray *)theArray
 {
    // NSString *four;
+//    
+//     NSArray *array = [[NSArray alloc] initWithObjects:@"dinosaur", @"catfish", @"spoon", @123, @[], nil];
     
-     NSArray *array = [[NSArray alloc] initWithObjects:@"dinosaur", @"catfish", @"spoon", @123, @[], nil];
-    
-    for (int i = 0; i < array.count; i++) {
-       // NSString *four = [array objectAtIndex:4];
-        NSLog(@"%@", [array objectAtIndex:4]);
-        
-    }
-        return [array objectAtIndex:4];
+//    for (int i = 0; i < array.count; i++) {
+//       // NSString *four = [array objectAtIndex:4];
+//        NSLog(@"%@", [array objectAtIndex:4]);
+//        
+//    }
+       // return [array objectAtIndex:4];
+    return theArray[4];
   }
 // return an array with the following strings
 //   "dinosaur"
@@ -187,10 +188,10 @@
 
 - (void)addBalloonAtIndexTwo:(NSMutableArray *)array
 {
-     NSMutableArray *balloonArray = [[NSMutableArray alloc] initWithObjects:@"dinosaur", @"catfish", @"spoon", @123, @[], nil];
+//     NSMutableArray *balloonArray = [[NSMutableArray alloc] initWithObjects:@"dinosaur", @"catfish", @"spoon", @123, @[], nil];
     
-    [balloonArray insertObject:@"balloon" atIndex:2];
-    
+    [array insertObject:@"balloon" atIndex:2];
+
 }
 
 
@@ -207,8 +208,8 @@
 - (NSArray *)joinArrayOne:(NSArray *)arrayOne
              withArrayTwo:(NSArray *)arrayTwo
 {
-    arrayOne = @[@1, @2, @3];
-    arrayTwo = @[@4, @5, @6];
+//    arrayOne = @[@1, @2, @3];
+//    arrayTwo = @[@4, @5, @6];
     
     NSArray *newArray=[arrayOne arrayByAddingObjectsFromArray:arrayTwo];
     
@@ -275,19 +276,19 @@
 
 - (void)manipulateTheDictionary:(NSMutableDictionary *)aDictionary
 {
-    
-    NSMutableDictionary *blah = [NSMutableDictionary
-                                 dictionaryWithDictionary:@{
-                                                            @"Persian" : @"carpet",
-                                                            @"hot" : @"weather",
-                                                            @"Audi Quattro (Silver)" : @"Bill",
-                                                            @"Audi A7" : @"Bill"
-                                                            }];
+//    
+//    NSMutableDictionary *blah = [NSMutableDictionary
+//                                 dictionaryWithDictionary:@{
+//                                                            @"Persian" : @"carpet",
+//                                                            @"hot" : @"weather",
+//                                                            @"Audi Quattro (Silver)" : @"Bill",
+//                                                            @"Audi A7" : @"Bill"
+//                                                            }];
 
     
-    [blah setObject:@"rainy" forKey:@"weather"];
+    [aDictionary setObject:@"rainy" forKey:@"weather"];
 
-    [blah removeObjectForKey:@"carpet"];
+    [aDictionary removeObjectForKey:@"carpet"];
    
 }
 
@@ -322,9 +323,11 @@
 //   * Feed it
 //   * Return it
 
-- (Ewok*)createAnEwokAndDoSomeStuffWithIt
+- (Ewok *)createAnEwokAndDoSomeStuffWithIt
 {
-       Ewok *ewokCreated = [[Ewok alloc] init];
+    Ewok *ewokCreated = [[Ewok alloc] init];
+    [ewokCreated setName:@"Carl"];
+    [ewokCreated walk:8];
     [ewokCreated feed];
     return ewokCreated;
 }
