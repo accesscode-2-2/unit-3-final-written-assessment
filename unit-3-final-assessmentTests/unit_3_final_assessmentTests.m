@@ -9,6 +9,7 @@
 #import <XCTest/XCTest.h>
 #import "Written.h"
 #import <objc/message.h>
+#import "Ewok.h"
 
 #define RT_INT @"i"
 #define RT_NSINT @"q"
@@ -240,6 +241,23 @@
     NSInteger(^sum)(NSInteger, NSInteger) = [self.written createAndReturnABlockThatSumsTwoNumber];
     XCTAssertTrue(sum(2, 5) == 7);
 }
+
+- (void)testWalkTheEwok
+{
+    Ewok *e = [[Ewok alloc] init];
+    [self.written walkTheEwok:e];
+    
+    XCTAssertTrue(e.energy == 50);
+}
+
+- (void)testCreateAndDoStuffWithEwok
+{
+    Ewok *e = [self.written createAnEwokAndDoSomeStuffWithIt];
+    
+    XCTAssertTrue([e.name isEqualToString:@"Carl"]);
+    XCTAssertTrue(e.energy == 80);
+}
+
 
 # pragma -
 # pragma mark private helpers

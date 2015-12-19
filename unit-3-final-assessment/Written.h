@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+#import "Ewok.h"
 
 @interface Written : NSObject
 
@@ -54,6 +55,10 @@
 - (void)manipulateTheDictionary:(NSMutableDictionary *)aDictionary;
 
 - (void)executeTheProvidedBlock:(void(^)())completion;
+
+- (void)walkTheEwok:(Ewok *)ewok;
+
+- (Ewok *)createAnEwokAndDoSomeStuffWithIt;
 
 - (NSInteger(^)(NSInteger a, NSInteger b))createAndReturnABlockThatSumsTwoNumber;
 

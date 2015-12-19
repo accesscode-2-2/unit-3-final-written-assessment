@@ -202,11 +202,35 @@
     
 }
 
-// Privided a block as a parameter, simply execute the block
+
+// Provided a block as a parameter, simply execute the block
+
 - (void)executeTheProvidedBlock:(void (^)())completion
 {
     
 }
+
+
+// Tell the ewok to walk 10 steps
+
+- (void)walkTheEwok:(Ewok *)ewok
+{
+    
+}
+
+
+// Follow the steps
+//   * Create an instance of Ewok
+//   * Name it "Carl"
+//   * Tell it to walk 8 steps
+//   * Feed it
+//   * Return it
+
+- (void)createAnEwokAndDoSomeStuffWithIt
+{
+    
+}
+
 
 // ** BONUS **
 
@@ -216,6 +240,5 @@
 {
     
 }
-
 
 @end

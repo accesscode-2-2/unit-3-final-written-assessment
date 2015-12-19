@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8D528D091C25A59900B07EBE /* Ewok.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D528D081C25A59900B07EBE /* Ewok.m */; };
 		8D5AB0981C0CAB6B00792242 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D5AB0971C0CAB6B00792242 /* main.m */; };
 		8D5AB0B41C0CAB6B00792242 /* unit_3_final_assessmentTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D5AB0B31C0CAB6B00792242 /* unit_3_final_assessmentTests.m */; };
 		8D74A0701C0E059C00EDFE44 /* Written.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D74A06F1C0E059C00EDFE44 /* Written.m */; };
@@ -27,6 +28,8 @@
 /* Begin PBXFileReference section */
 		29580D5D00DD4901586C0702 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		47AB5E85138A0F6F6FACE671 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		8D528D071C25A59900B07EBE /* Ewok.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Ewok.h; sourceTree = "<group>"; };
+		8D528D081C25A59900B07EBE /* Ewok.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Ewok.m; sourceTree = "<group>"; };
 		8D5AB0931C0CAB6B00792242 /* unit-3-final-assessment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "unit-3-final-assessment.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D5AB0971C0CAB6B00792242 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		8D5AB0AA1C0CAB6B00792242 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -76,6 +79,15 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		8D528D0A1C25A59D00B07EBE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8D528D071C25A59900B07EBE /* Ewok.h */,
+				8D528D081C25A59900B07EBE /* Ewok.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		8D5AB08A1C0CAB6B00792242 = {
 			isa = PBXGroup;
 			children = (
@@ -101,6 +113,7 @@
 			children = (
 				8DDC2AEF1C247A9200DDE6CB /* AppDelegate.h */,
 				8DDC2AF01C247A9200DDE6CB /* AppDelegate.m */,
+				8D528D0A1C25A59D00B07EBE /* Model */,
 				8D625ED51C230DF600D0BE17 /* Written Assessment */,
 				8D5AB0961C0CAB6B00792242 /* Supporting Files */,
 			);
@@ -236,6 +249,7 @@
 				8D74A0701C0E059C00EDFE44 /* Written.m in Sources */,
 				8D5AB0981C0CAB6B00792242 /* main.m in Sources */,
 				8DDC2AF11C247A9200DDE6CB /* AppDelegate.m in Sources */,
+				8D528D091C25A59900B07EBE /* Ewok.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
