@@ -251,11 +251,20 @@
 
 - (NSString *)returnTheLastStandardResolutionImageURL:(NSDictionary *)JSON
 {
-    NSDictionary* data = [NSDictionary dictionaryWithObjectsAndKeys:[JSON objectForKey:@"data"], nil];
-    NSMutableArray* lastPost = [NSMutableArray arrayWithObject:[[data objectForKey:@"data"] lastObject]];
     
-    NSString* standardResolutionURL= [[[lastPost[0] objectForKey:@"images"] objectForKey:@"standard_resolution"] objectForKey:@"url"];
+    NSMutableArray* dataArray = [NSMutableArray arrayWithArray:[JSON objectForKey:@"data"]];
     
+      NSString* standardResolutionURL = [[[[dataArray lastObject] objectForKey:@"images"] objectForKey:@"standard_resolution"] objectForKey:@"url"];
+    
+    
+    
+    
+    
+//    NSDictionary* data = [NSDictionary dictionaryWithObjectsAndKeys:[JSON objectForKey:@"data"], nil];
+//    NSMutableArray* lastPost = [NSMutableArray arrayWithObject:[[data objectForKey:@"data"] lastObject]];
+//    
+//    NSString* standardResolutionURL= [[[lastPost[0] objectForKey:@"images"] objectForKey:@"standard_resolution"] objectForKey:@"url"];
+//
     return standardResolutionURL;
     }
 
