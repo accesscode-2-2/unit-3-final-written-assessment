@@ -10,14 +10,12 @@
 
 @implementation Written
 
-
 // return any positive integer
 
 - (NSInteger)returnAnyPositiveInteger
 {
     return 5;
 }
-
 
 // return any positive integer greater than 1000
 
@@ -26,14 +24,12 @@
     return 3000;
 }
 
-
 // return any negative float
 
 - (CGFloat)returnAnyNegativeFloat
 {
     return -5.0;
 }
-
 
 // return a truthy BOOL
 
@@ -42,7 +38,6 @@
     return YES;
 }
 
-
 // return the character 'k'
 
 - (char)returnTheCharacterK
@@ -50,9 +45,7 @@
     return 'k';
 }
 
-
 /* ======================= */
-
 
 // return the sum of integerA and integerB
 
@@ -62,7 +55,6 @@
     return integerA + integerB;
 }
 
-
 // return the difference between floatA and floatB
 
 - (CGFloat)returnTheDifferenceBetweenFloatA:(CGFloat)floatA
@@ -71,14 +63,12 @@
     return floatA - floatB;
 }
 
-
 // return the product of x and 100
 
 - (CGFloat)returnTheProductOfXAnd100:(CGFloat)x
 {
     return x * 100;
 }
-
 
 // return the quotient of floatA and floatB
 
@@ -90,7 +80,6 @@
     }
     return floatA;
 }
-
 
 // return YES if x is greater than 10
 // return NO if x is less than or greater than 10
@@ -117,7 +106,6 @@
     }
 }
 }
-
 
 // return the sum of all numbers between
 // 0 and 246 INCLUDING 246.
@@ -147,7 +135,6 @@
 
 /* ======================= */
 
-
 // return the 5th item (index 4) from the provided array
 
 - (id)returnThe5thElementInTheArray:(NSArray *)theArray
@@ -169,7 +156,6 @@
 
     return arr;
 }
-
 
 // insert the string "balloon" to the provided array
 // at index 2
@@ -204,7 +190,6 @@
     return arr3;
 }
 
-
 // Given a dictionary, return the object for the key "mountain"
 
 - (id)returnTheObjectForTheKeyMountain:(NSDictionary *)dictionary
@@ -212,7 +197,6 @@
     return dictionary[@"mountain"];
 //    return [@"mountain"];
 }
-
 
 // Using the provided JSON, parse and return the 'last standard resolution image url'
 //
@@ -244,7 +228,6 @@
     [aDictionary setObject:@"rainy" forKey:@"weather"];
 }
 
-
 // Provided a block as a parameter, simply execute the block
 
 - (void)executeTheProvidedBlock:(void (^)())completion
@@ -252,14 +235,12 @@
     completion();
 }
 
-
 // Tell the ewok to walk 10 steps
 
 - (void)walkTheEwok:(Ewok *)ewok
 {
     [ewok walk:10];
 }
-
 
 // Follow the steps
 //   * Create an instance of Ewok
@@ -279,7 +260,6 @@
     
     // okay so i spent too long on this one b/c I didn't pass the Ewok class...it was void
 }
-
 
 // ** BONUS **
 
