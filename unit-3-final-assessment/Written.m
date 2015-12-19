@@ -285,8 +285,7 @@
 
 - (void)executeTheProvidedBlock:(void (^)())completion
 {
-
-
+    completion();
 }
 
 
@@ -322,8 +321,18 @@
 
 // Create and return a block that takes 2 NSInteger parameters and
 // returns the sum
-- (void)createAndReturnABlockThatReturnsTheSumsOfTwoNumber
+- (NSInteger)createAndReturnABlockThatReturnsTheSumsOfTwoNumber
 {
+    
+    NSInteger (^addTwoNumbers)(NSInteger, NSInteger);
+    
+    addTwoNumbers = ^(NSInteger firstNumber, NSInteger secondNumber) {
+        return firstNumber + secondNumber;
+    };
+
+    NSInteger numbersAdded = addTwoNumbers(3,4);
+    
+    return numbersAdded;
     
 }
 
