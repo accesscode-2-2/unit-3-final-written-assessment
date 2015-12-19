@@ -95,10 +95,12 @@
 - (BOOL)returnYESIfXIsGreaterThan10AndNoIfXIsLessThanOrEqualTo10:(NSInteger)x
 {
     
-//    NSInteger x = 11;
+    if (x > 10) {
+        return YES;
+    }
     
     
-    return YES;
+    return NO;
 }
 
 
@@ -107,7 +109,11 @@
 
 - (BOOL)returnYESIfXIsEvenAndNOIfXIsOdd:(NSInteger)x
 {
-//    x == 3;
+
+
+    if (x % 2 == 0) {
+        return YES;
+    }
     
     return NO;
 }
@@ -169,7 +175,9 @@
 - (NSArray *)returnAnArrayWithTheDescribedItems
 {
     
-    NSArray *arraywithTheseItems = @[@"dinosaur", @"catfish", @"spoon", @123, @""];
+//    NSArray *arraywithTheseItems = @[@"dinosaur", @"catfish", @"spoon", @123, @""];
+    
+    NSArray *arraywithTheseItems = [NSArray arrayWithObjects:@"dinosaur", @"catfish", @"spoon", @123, nil];
     
     return arraywithTheseItems;
 }
@@ -222,12 +230,24 @@
 
 - (NSString *)returnTheLastStandardResolutionImageURL:(NSDictionary *)JSON
 {
+    NSString *urlString;
+    NSArray *posts = [JSON objectForKey:@"data"];
     
-    NSString *coolString = @"https://scontent.cdninstagram.com/hphotos-xpf1/t51.2885-15/s640x640/sh0.08/e35/12393718_1244566162224129_389427239_n.jpg";
+    for (NSDictionary *post in posts) {
+        
+        NSDictionary *images = [post objectForKey:@"images"];
+        
+        NSDictionary *standardres = [images objectForKey:@"standard_resolution"];
+        
+        NSArray *urlArray = [standardres objectForKey:@"url"];
+        
+        NSString *urlString = [urlArray lastObject];
+        
+        NSLog (@"%@", urlString);
     
-//    NSString *coolString = [NSDictionary *dictionary];
+    }
     
-    return coolString;
+    return urlString;
 }
 
 
