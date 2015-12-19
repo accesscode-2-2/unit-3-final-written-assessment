@@ -93,7 +93,8 @@
 
 - (CGFloat)returnTheProductOfXAnd100:(CGFloat)x
 {
-    return 0;
+    CGFloat product = x*100;
+    return product;
 }
 
 
@@ -102,6 +103,8 @@
 - (CGFloat)returnTheQuotientOfFloatA:(CGFloat)floatA
                            andFloatB:(CGFloat)floatB
 {
+    
+    CGFloat quotient = floatA/floatB;
     return 0;
 }
 
@@ -267,8 +270,8 @@
 
 - (void)executeTheProvidedBlock:(void (^)())completion
 {
-    
-    
+
+
 }
 
 
