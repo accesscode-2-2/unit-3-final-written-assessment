@@ -13,41 +13,41 @@
 
 // return any positive integer
 
-- (void)returnAnyPositiveInteger
+- (NSInteger)returnAnyPositiveInteger
 {
-    
+    return 5;
 }
 
 
 // return any positive integer greater than 1000
 
-- (void)returnAnyPositiveIntegerGreaterThan1000
+- (NSInteger)returnAnyPositiveIntegerGreaterThan1000
 {
-    
+    return 3000;
 }
 
 
 // return any negative float
 
-- (void)returnAnyNegativeFloat
+- (CGFloat)returnAnyNegativeFloat
 {
-    
+    return -5.0;
 }
 
 
 // return a truthy BOOL
 
-- (void)returnATruthyBool
+- (BOOL)returnATruthyBool
 {
-    
+    return YES;
 }
 
 
 // return the character 'k'
 
-- (void)returnTheCharacterK
+- (char)returnTheCharacterK
 {
-    
+    return 'k';
 }
 
 
@@ -59,16 +59,16 @@
 - (NSInteger)returnTheSumOfIntegerA:(NSInteger)integerA
                         andIntegerB:(NSInteger)integerB
 {
-    return 0;
+    return integerA + integerB;
 }
 
 
 // return the difference between floatA and floatB
 
 - (CGFloat)returnTheDifferenceBetweenFloatA:(CGFloat)floatA
-                                    andFloatB:(CGFloat)floatB
+                                  andFloatB:(CGFloat)floatB
 {
-    return 0;
+    return floatA - floatB;
 }
 
 
@@ -76,7 +76,7 @@
 
 - (CGFloat)returnTheProductOfXAnd100:(CGFloat)x
 {
-    return 0;
+    return x * 100;
 }
 
 
@@ -85,7 +85,10 @@
 - (CGFloat)returnTheQuotientOfFloatA:(CGFloat)floatA
                            andFloatB:(CGFloat)floatB
 {
-    return 0;
+    if (floatB!= 0) {
+        return floatA / floatB;
+    }
+    return floatA;
 }
 
 
@@ -94,16 +97,25 @@
 
 - (BOOL)returnYESIfXIsGreaterThan10AndNoIfXIsLessThanOrEqualTo10:(NSInteger)x
 {
-    return YES;
+    if (x > 10) {
+        return YES;
+    }
+    else (x <= 10);{
+        return NO;
+    }
 }
-
 
 // return YES if x is even
 // return NO if x is odd
 
 - (BOOL)returnYESIfXIsEvenAndNOIfXIsOdd:(NSInteger)x
 {
+    if (x %2 == 0) {
     return YES;
+    } else { (x %2 !=0); {
+        return NO;
+    }
+}
 }
 
 
@@ -112,16 +124,25 @@
 
 - (NSInteger)returnTheSumOf0ToX:(NSInteger)x
 {
-    return 0;
+    NSInteger sum = 0;
+    for (NSInteger i = 0; i <= x; i++) {
+        sum += i;
+    }
+    return sum;
 }
-
 
 // return the sum of all even numbers between
 // 0 and x NOT INCLUDING x
 
 - (NSInteger)returnTheSumOfAllEvenNumbersBetween0AndX:(NSInteger)x
 {
-    return 0;
+    NSInteger sum = 0;
+    for (NSInteger i = 0; i < x; i++) {
+        if (i % 2 == 0) {
+            sum += i;
+        }
+    }
+    return sum;
 }
 
 /* ======================= */
@@ -131,9 +152,9 @@
 
 - (id)returnThe5thElementInTheArray:(NSArray *)theArray
 {
-    return nil;
+    id the5thElementInTheArray = [theArray objectAtIndex:4];
+    return the5thElementInTheArray;
 }
-
 
 // return an array with the following strings
 //   "dinosaur"
@@ -144,7 +165,9 @@
 
 - (NSArray *)returnAnArrayWithTheDescribedItems
 {
-    return @[];
+    NSArray *arr = @[@"dinosaur", @"catfish", @"spoon", @123, @[]];
+
+    return arr;
 }
 
 
@@ -153,9 +176,8 @@
 
 - (void)addBalloonAtIndexTwo:(NSMutableArray *)array
 {
-    
+    [array insertObject:@"balloon" atIndex:2];
 }
-
 
 // Give two arrays, return a new array that is the
 // result of joining arrayOne with arrayTwo
@@ -170,7 +192,16 @@
 - (NSArray *)joinArrayOne:(NSArray *)arrayOne
              withArrayTwo:(NSArray *)arrayTwo
 {
-    return @[];
+//    NSMutableArray *arrOne = [[NSMutableArray alloc] initWithObjects:@1, @2, @3, @4, nil];
+//    NSMutableArray *arrTwo = [[NSMutableArray alloc] initWithObjects:@5, @6, @7, @8, nil];
+//    
+//    [arrOne addObject:arrTwo];
+    
+// thought i could do it like the way above but i guess since arrayByAddingObjectsFromArray does it for you...
+    
+    NSArray *arr3 = [arrayOne arrayByAddingObjectsFromArray:arrayTwo];
+
+    return arr3;
 }
 
 
@@ -178,7 +209,8 @@
 
 - (id)returnTheObjectForTheKeyMountain:(NSDictionary *)dictionary
 {
-    return nil;
+    return dictionary[@"mountain"];
+//    return [@"mountain"];
 }
 
 
@@ -189,9 +221,18 @@
 
 - (NSString *)returnTheLastStandardResolutionImageURL:(NSDictionary *)JSON
 {
-    return @"";
+    NSString *lastStandardResolutionImageURL;
+    
+    // dict in dict in dict in dict
+    
+    NSDictionary *data = [JSON objectForKey:@"data"];
+    for (NSDictionary *moreData in data) {
+        NSDictionary *images = [moreData objectForKey:@"images"];
+        NSDictionary *standardRes = [images objectForKey:@"standard_resolution"];
+        lastStandardResolutionImageURL = [standardRes objectForKey:@"url"];
+    }
+    return lastStandardResolutionImageURL;
 }
-
 
 // Perform the following manipulations to the provided dictionary
 //  • Remove the object for the key "carpet"
@@ -199,7 +240,8 @@
 
 - (void)manipulateTheDictionary:(NSMutableDictionary *)aDictionary
 {
-    
+    [aDictionary removeObjectForKey:@"carpet"];
+    [aDictionary setObject:@"rainy" forKey:@"weather"];
 }
 
 
@@ -207,7 +249,7 @@
 
 - (void)executeTheProvidedBlock:(void (^)())completion
 {
-    
+    completion();
 }
 
 
@@ -215,7 +257,7 @@
 
 - (void)walkTheEwok:(Ewok *)ewok
 {
-    
+    [ewok walk:10];
 }
 
 
@@ -226,8 +268,16 @@
 //   * Feed it
 //   * Return it
 
-- (void)createAnEwokAndDoSomeStuffWithIt
+- (Ewok *)createAnEwokAndDoSomeStuffWithIt
 {
+    Ewok *dankEwok = [[Ewok alloc] init];
+    dankEwok.name = @"Carl";
+    [dankEwok walk:8];
+    [dankEwok feed];
+    
+    return dankEwok;
+    
+    // okay so i spent too long on this one b/c I didn't pass the Ewok class...it was void
 }
 
 
