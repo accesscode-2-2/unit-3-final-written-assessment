@@ -67,7 +67,7 @@
 // return the difference between floatA and floatB
 
 - (CGFloat)returnTheDifferenceBetweenFloatA:(CGFloat)floatA
-                                    andFloatB:(CGFloat)floatB
+                                  andFloatB:(CGFloat)floatB
 {
     return floatA - floatB;
 }
@@ -140,7 +140,7 @@
         }
     }
     return sum;
-
+    
 }
 
 /* ======================= */
@@ -274,18 +274,16 @@
 
 // Create and return a block that takes 2 NSInteger parameters and
 // returns the sum
-- (NSInteger(^)(NSInteger, NSInteger))createAndReturnABlockThatReturnsTheSumsOfTwoNumber
+
+
+- (NSInteger(^)(NSInteger a, NSInteger b))createAndReturnABlockThatReturnsTheSumsOfTwoNumber
 {
-    NSInteger (^sum)(NSInteger integerA, NSInteger integerB) = ^(NSInteger integerA, NSInteger integerB)
-    {
-        NSInteger summed = integerA + integerB;
-        return summed;
-    };
-//    static NSInteger (^sum)(NSInteger, NSInteger) = ^(NSInteger integerA, NSInteger integerB) {
-//        
-//    };
     
-    return sum;
+    NSInteger (^sumbloc)(NSInteger firstInt, NSInteger secondInt) = ^NSInteger(NSInteger integerA, NSInteger integerB){
+        return integerA + integerB;
+    };
+    return sumbloc;
+    
 }
 
 @end
