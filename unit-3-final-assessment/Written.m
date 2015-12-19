@@ -13,41 +13,41 @@
 
 // return any positive integer
 
-- (void)returnAnyPositiveInteger
+- (NSInteger)returnAnyPositiveInteger
 {
-    
+    return 1;
 }
 
 
 // return any positive integer greater than 1000
 
-- (void)returnAnyPositiveIntegerGreaterThan1000
+- (NSInteger)returnAnyPositiveIntegerGreaterThan1000
 {
-    
+    return 1001;
 }
 
 
 // return any negative float
 
-- (void)returnAnyNegativeFloat
+- (CGFloat)returnAnyNegativeFloat
 {
-    
+    return -1.2;
 }
 
 
 // return a truthy BOOL
 
-- (void)returnATruthyBool
+- (BOOL)returnATruthyBool
 {
-    
+    return YES;
 }
 
 
 // return the character 'k'
 
-- (void)returnTheCharacterK
+- (char)returnTheCharacterK
 {
-    
+    return 'k';
 }
 
 
@@ -59,7 +59,7 @@
 - (NSInteger)returnTheSumOfIntegerA:(NSInteger)integerA
                         andIntegerB:(NSInteger)integerB
 {
-    return 0;
+    return integerA + integerB;
 }
 
 
@@ -68,7 +68,7 @@
 - (CGFloat)returnTheDifferenceBetweenFloatA:(CGFloat)floatA
                                     andFloatB:(CGFloat)floatB
 {
-    return 0;
+    return floatA - floatB;
 }
 
 
@@ -76,7 +76,7 @@
 
 - (CGFloat)returnTheProductOfXAnd100:(CGFloat)x
 {
-    return 0;
+    return x * 100;
 }
 
 
@@ -85,7 +85,7 @@
 - (CGFloat)returnTheQuotientOfFloatA:(CGFloat)floatA
                            andFloatB:(CGFloat)floatB
 {
-    return 0;
+    return floatA/floatB;
 }
 
 
@@ -94,7 +94,13 @@
 
 - (BOOL)returnYESIfXIsGreaterThan10AndNoIfXIsLessThanOrEqualTo10:(NSInteger)x
 {
-    return YES;
+    
+    if (x > 10) {
+        return YES;
+    }
+    
+    
+    return NO;
 }
 
 
@@ -103,7 +109,13 @@
 
 - (BOOL)returnYESIfXIsEvenAndNOIfXIsOdd:(NSInteger)x
 {
-    return YES;
+
+
+    if (x % 2 == 0) {
+        return YES;
+    }
+    
+    return NO;
 }
 
 
@@ -112,7 +124,15 @@
 
 - (NSInteger)returnTheSumOf0ToX:(NSInteger)x
 {
-    return 0;
+    NSInteger newSum = 0;
+    for (NSInteger i = 0; i <= x; i++) {
+        
+            newSum += i;
+    }
+    
+    
+    
+    return newSum;
 }
 
 
@@ -121,7 +141,17 @@
 
 - (NSInteger)returnTheSumOfAllEvenNumbersBetween0AndX:(NSInteger)x
 {
-    return 0;
+    NSInteger sum = 0;
+    for (NSInteger i = 0; i <= x; i++) {
+        if (i%2 == 0) {
+            sum += i;
+        }
+    }
+    
+    
+    
+    
+    return sum;
 }
 
 /* ======================= */
@@ -131,7 +161,7 @@
 
 - (id)returnThe5thElementInTheArray:(NSArray *)theArray
 {
-    return nil;
+    return theArray[4];
 }
 
 
@@ -144,7 +174,12 @@
 
 - (NSArray *)returnAnArrayWithTheDescribedItems
 {
-    return @[];
+    
+//    NSArray *arraywithTheseItems = @[@"dinosaur", @"catfish", @"spoon", @123, @""];
+    
+    NSArray *arraywithTheseItems = [NSArray arrayWithObjects:@"dinosaur", @"catfish", @"spoon", @123, nil];
+    
+    return arraywithTheseItems;
 }
 
 
@@ -153,7 +188,7 @@
 
 - (void)addBalloonAtIndexTwo:(NSMutableArray *)array
 {
-    
+    [array insertObject:@"balloon" atIndex:2];
 }
 
 
@@ -170,7 +205,10 @@
 - (NSArray *)joinArrayOne:(NSArray *)arrayOne
              withArrayTwo:(NSArray *)arrayTwo
 {
-    return @[];
+    
+    NSArray *newArray = [arrayOne arrayByAddingObjectsFromArray: arrayTwo];
+    
+    return newArray;
 }
 
 
@@ -178,6 +216,9 @@
 
 - (id)returnTheObjectForTheKeyMountain:(NSDictionary *)dictionary
 {
+    
+    //ignore
+    
     return nil;
 }
 
@@ -189,7 +230,28 @@
 
 - (NSString *)returnTheLastStandardResolutionImageURL:(NSDictionary *)JSON
 {
-    return @"";
+    
+       NSDictionary *posts = [JSON objectForKey:@"data"];
+    
+//    for (NSDictionary *post in posts) {
+    
+//    NSDictionary *post = [posts objectForKey: ]
+    
+        NSDictionary *images = [posts objectForKey:@"images"];
+        
+        NSDictionary *standardres = [images objectForKey:@"standard_resolution"];
+        
+        NSArray *urlArray = [standardres objectForKey:@"url"];
+        
+        NSString *urlString = [urlArray lastObject];
+        
+//        return urlString;
+        
+//        NSLog (@"%@", urlString);
+    
+    
+    
+    return urlString;
 }
 
 
@@ -199,7 +261,9 @@
 
 - (void)manipulateTheDictionary:(NSMutableDictionary *)aDictionary
 {
+    [aDictionary removeObjectForKey:@"carpet"];
     
+    [aDictionary setObject:@"rainy" forKey:@"weather"];
 }
 
 
@@ -208,6 +272,8 @@
 - (void)executeTheProvidedBlock:(void (^)())completion
 {
     
+    completion();
+    
 }
 
 
@@ -215,6 +281,8 @@
 
 - (void)walkTheEwok:(Ewok *)ewok
 {
+    
+    [ewok walk:10];
     
 }
 
@@ -226,8 +294,15 @@
 //   * Feed it
 //   * Return it
 
-- (void)createAnEwokAndDoSomeStuffWithIt
+- (id)createAnEwokAndDoSomeStuffWithIt
 {
+    
+    Ewok *ewok = [[Ewok alloc] init];
+    ewok.name = @"Carl";
+    [ewok walk:8];
+    [ewok feed];
+    
+    return ewok;
 }
 
 
