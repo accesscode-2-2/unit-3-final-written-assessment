@@ -230,12 +230,14 @@
 
 - (NSString *)returnTheLastStandardResolutionImageURL:(NSDictionary *)JSON
 {
-    NSString *urlString;
-    NSArray *posts = [JSON objectForKey:@"data"];
     
-    for (NSDictionary *post in posts) {
-        
-        NSDictionary *images = [post objectForKey:@"images"];
+       NSDictionary *posts = [JSON objectForKey:@"data"];
+    
+//    for (NSDictionary *post in posts) {
+    
+//    NSDictionary *post = [posts objectForKey: ]
+    
+        NSDictionary *images = [posts objectForKey:@"images"];
         
         NSDictionary *standardres = [images objectForKey:@"standard_resolution"];
         
@@ -243,9 +245,11 @@
         
         NSString *urlString = [urlArray lastObject];
         
-        NSLog (@"%@", urlString);
+//        return urlString;
+        
+//        NSLog (@"%@", urlString);
     
-    }
+    
     
     return urlString;
 }
