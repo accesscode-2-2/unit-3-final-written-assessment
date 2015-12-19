@@ -105,7 +105,7 @@
 {
     
     CGFloat quotient = floatA/floatB;
-    return 0;
+    return quotient;
 }
 
 
