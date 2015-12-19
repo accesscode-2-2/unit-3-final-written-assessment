@@ -160,12 +160,12 @@
 // Give two arrays, return a new array that is the
 // result of joining arrayOne with arrayTwo
 //
-// eg.
-// arrayOne = [@1, @2, @3];
-// arrayTwo = [@4, @5, @6];
+// example.
+//   arrayOne = [@1, @2, @3];
+//   arrayTwo = [@4, @5, @6];
 //
-// You would return the following array:
-// [@1, @2, @3, @4, @5, @6];
+//   You would return the following array:
+//   [@1, @2, @3, @4, @5, @6];
 
 - (NSArray *)joinArrayOne:(NSArray *)arrayOne
              withArrayTwo:(NSArray *)arrayTwo
@@ -202,6 +202,7 @@
     
 }
 
+// Privided a block as a parameter, simply execute the block
 - (void)executeTheProvidedBlock:(void (^)())completion
 {
     
@@ -209,6 +210,8 @@
 
 // ** BONUS **
 
+// Create and return a block that takes 2 NSInteger parameters and
+// returns the sum
 - (void)createAndReturnABlockThatReturnsTheSumsOfTwoNumber
 {
     
