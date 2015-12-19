@@ -120,7 +120,7 @@
 - (NSInteger)returnTheSumOf0ToX:(NSInteger)x
 {
     NSInteger sum = 0;
-    for(NSInteger i = 0; i <= 246; i++)
+    for(NSInteger i = 0; i <= x; i++)
     {
         sum = sum + i;
         
@@ -136,7 +136,7 @@
 - (NSInteger)returnTheSumOfAllEvenNumbersBetween0AndX:(NSInteger)x
 {
     int sumOfEven = 0;
-    for (int i = 0; i < 20; i++) {
+    for (int i = 0; i < x; i++) {
         if (i % 2 == 0) {
             sumOfEven = sumOfEven + i;
         }
