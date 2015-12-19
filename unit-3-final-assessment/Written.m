@@ -208,17 +208,20 @@
 {
     NSString *urlString;
     
+//    [JSON objectForKey:@"data"];
+    
     NSArray *posts = [JSON objectForKey:@"data"];
+
+    [posts lastObject];
     
     for (NSDictionary *post in posts) {
         
         NSDictionary *images = [post objectForKey:@"images"];
         
-        NSDictionary *thumbnail = [images objectForKey:@"thumbnail"];
+        NSDictionary *thumbnail = [images objectForKey:@"standard_resolution"];
         
-        NSString *urlString = [thumbnail objectForKey:@"url"];
+        urlString = [thumbnail objectForKey:@"url"];
         
-        NSLog(@"%@", urlString);
     }
     
     return urlString;
@@ -275,19 +278,36 @@
 //- (void)someMethodThatTakesABlock:(NSInteger (^)(NSInteger a, NSInteger b))blockName;
 // Create and return a block that takes 2 NSInteger parameters and
 // returns the sum
-- (NSInteger(^)(NSInteger a, NSInteger b))createAndReturnABlockThatSumsTwoNumber
-{
+
+//- (void)add:(NSInteger)a
+//      steps:(NSInteger)b;
+//- (NSInteger(^)(NSInteger a, NSInteger b))createAndReturnABlockThatSumsTwoNumber
+//{
 //    NSInteger (^addTwoValues)(NSInteger a, NSInteger b) =
 //    ^(NSInteger firstValue, NSInteger secondValue) {
 //        NSInteger sum = firstValue + secondValue;
 //        return sum;
 //    };
-    NSInteger (^addTwoValues)(NSInteger a, NSInteger b) =
-    ^(NSInteger a, NSInteger b) {
-        return a + b;
-    };
+//    NSInteger (^add)(NSInteger a, NSInteger b) =
+//    ^(NSInteger a, NSInteger b) {
+//        return 1 + 2;
+//    };
+//
+//    return ;
+
+
+//    NSInteger (^addTwoValues)(NSInteger a, NSInteger b) =
+//    ^(NSInteger a, NSInteger b) {
+//        NSInteger sum = a + b;
+//        return sum;
+//    };
     
-    return addTwoValues(1, 2);
+//    return addTwoValues(1, 2);
+//
+//    NSInteger result = addTwoValues(1,2);
+//
+//    return addTwoValues(1,2);
+
 
 
 //    ^ NSInteger (NSInteger firstValue, NSInteger secondValue) {
@@ -307,6 +327,6 @@
 //        NSInteger sum = a + b;
 //        return sum;
 //    }];
-}
+//}
 
 @end
