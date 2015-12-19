@@ -10,7 +10,7 @@
 
 @interface Ewok : NSObject
 
-@property (nonatomic) NSInteger energy;
+@property (nonatomic, readonly) NSInteger energy;
 @property (nonatomic) NSString *name;
 
 - (void)walk:(NSInteger)steps;

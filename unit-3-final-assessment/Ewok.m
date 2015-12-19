@@ -8,6 +8,12 @@
 
 #import "Ewok.h"
 
+@interface Ewok()
+
+@property (nonatomic, readwrite) NSInteger energy;
+
+@end
+
 @implementation Ewok
 
 - (instancetype)init
