@@ -13,41 +13,41 @@
 
 // return any positive integer
 
-- (void)returnAnyPositiveInteger
+- (NSInteger)returnAnyPositiveInteger
 {
-    
+    return 1;
 }
 
 
 // return any positive integer greater than 1000
 
-- (void)returnAnyPositiveIntegerGreaterThan1000
+- (NSInteger)returnAnyPositiveIntegerGreaterThan1000
 {
-    
+    return 1001;
 }
 
 
 // return any negative float
 
-- (void)returnAnyNegativeFloat
+- (CGFloat)returnAnyNegativeFloat
 {
-    
+    return -1;
 }
 
 
 // return a truthy BOOL
 
-- (void)returnATruthyBool
+- (BOOL)returnATruthyBool
 {
-    
+    return YES;
 }
 
 
 // return the character 'k'
 
-- (void)returnTheCharacterK
+- (char)returnTheCharacterK
 {
-    
+    return 'k';
 }
 
 
@@ -59,16 +59,17 @@
 - (NSInteger)returnTheSumOfIntegerA:(NSInteger)integerA
                         andIntegerB:(NSInteger)integerB
 {
-    return 0;
+    
+    return integerA + integerB;
 }
 
 
 // return the difference between floatA and floatB
 
 - (CGFloat)returnTheDifferenceBetweenFloatA:(CGFloat)floatA
-                                    andFloatB:(CGFloat)floatB
+                                  andFloatB:(CGFloat)floatB
 {
-    return 0;
+    return floatA - floatB;
 }
 
 
@@ -76,7 +77,7 @@
 
 - (CGFloat)returnTheProductOfXAnd100:(CGFloat)x
 {
-    return 0;
+    return x*100;
 }
 
 
@@ -85,7 +86,7 @@
 - (CGFloat)returnTheQuotientOfFloatA:(CGFloat)floatA
                            andFloatB:(CGFloat)floatB
 {
-    return 0;
+    return floatA/floatB;
 }
 
 
@@ -94,7 +95,11 @@
 
 - (BOOL)returnYESIfXIsGreaterThan10AndNoIfXIsLessThanOrEqualTo10:(NSInteger)x
 {
-    return YES;
+    
+    if (x>10) {
+        return YES;
+    }
+    return NO;
 }
 
 
@@ -103,7 +108,10 @@
 
 - (BOOL)returnYESIfXIsEvenAndNOIfXIsOdd:(NSInteger)x
 {
-    return YES;
+    if (x%2 == 0) {
+        return YES;
+    }
+    return NO;
 }
 
 
@@ -112,7 +120,11 @@
 
 - (NSInteger)returnTheSumOf0ToX:(NSInteger)x
 {
-    return 0;
+    NSInteger sum = 0;
+    for (int i =0; i<=x; i++) {
+        sum+=i;
+    }
+    return sum;
 }
 
 
@@ -121,7 +133,14 @@
 
 - (NSInteger)returnTheSumOfAllEvenNumbersBetween0AndX:(NSInteger)x
 {
-    return 0;
+    NSInteger sum = 0;
+    for (int i =0; i<x; i++) {
+        if (i%2==0) {
+            sum+=i;
+        }
+    }
+    return sum;
+    
 }
 
 /* ======================= */
@@ -131,7 +150,8 @@
 
 - (id)returnThe5thElementInTheArray:(NSArray *)theArray
 {
-    return nil;
+    
+    return [theArray objectAtIndex:4];
 }
 
 
@@ -144,7 +164,8 @@
 
 - (NSArray *)returnAnArrayWithTheDescribedItems
 {
-    return @[];
+    NSArray * arr = [[NSArray alloc]initWithObjects:@"dinosaur", @"catfish", @"spoon", @123, @[], nil];
+    return arr;
 }
 
 
@@ -153,6 +174,7 @@
 
 - (void)addBalloonAtIndexTwo:(NSMutableArray *)array
 {
+    [array insertObject:@"balloon" atIndex:2];
     
 }
 
@@ -170,7 +192,10 @@
 - (NSArray *)joinArrayOne:(NSArray *)arrayOne
              withArrayTwo:(NSArray *)arrayTwo
 {
-    return @[];
+    
+    NSMutableArray *joined = [arrayOne mutableCopy];
+    [joined addObjectsFromArray: arrayTwo];
+    return joined;
 }
 
 
@@ -178,7 +203,7 @@
 
 - (id)returnTheObjectForTheKeyMountain:(NSDictionary *)dictionary
 {
-    return nil;
+    return [dictionary objectForKey:@"mountain"];
 }
 
 
@@ -189,7 +214,10 @@
 
 - (NSString *)returnTheLastStandardResolutionImageURL:(NSDictionary *)JSON
 {
-    return @"";
+    NSArray *data = [JSON objectForKey:@"data"];
+    NSDictionary *lastPost = [data lastObject];
+    NSString *url = [[[lastPost objectForKey:@"images"] objectForKey:@"standard_resolution"] objectForKey:@"url"];
+    return url;
 }
 
 
@@ -200,6 +228,10 @@
 - (void)manipulateTheDictionary:(NSMutableDictionary *)aDictionary
 {
     
+    [aDictionary removeObjectForKey:@"carpet"];
+    
+    [aDictionary setObject:@"rainy" forKey:@"weather"];
+    
 }
 
 
@@ -207,6 +239,7 @@
 
 - (void)executeTheProvidedBlock:(void (^)())completion
 {
+    completion();
     
 }
 
@@ -215,7 +248,7 @@
 
 - (void)walkTheEwok:(Ewok *)ewok
 {
-    
+    [ewok walk:10];
 }
 
 
@@ -226,17 +259,30 @@
 //   * Feed it
 //   * Return it
 
-- (void)createAnEwokAndDoSomeStuffWithIt
+- (Ewok *)createAnEwokAndDoSomeStuffWithIt
 {
+    Ewok *ewok = [[Ewok alloc] init];
+    ewok.name = @"Carl";
+    [ewok walk:8];
+    [ewok feed];
+    return ewok;
 }
+
 
 
 // ** BONUS **
 
 // Create and return a block that takes 2 NSInteger parameters and
 // returns the sum
-- (void)createAndReturnABlockThatReturnsTheSumsOfTwoNumber
+
+
+- (NSInteger(^)(NSInteger a, NSInteger b))createAndReturnABlockThatSumsTwoNumber
 {
+    
+    NSInteger (^sum)(NSInteger firstInt, NSInteger secondInt) = ^NSInteger(NSInteger integerA, NSInteger integerB){
+        return integerA + integerB;
+    };
+    return sum;
     
 }
 
