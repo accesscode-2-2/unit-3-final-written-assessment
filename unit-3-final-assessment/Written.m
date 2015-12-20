@@ -211,22 +211,19 @@
 
 - (NSString *)returnTheLastStandardResolutionImageURL:(NSDictionary *)JSON
 {
-    NSArray *posts = [responseObject objectForKey:@"data"];
-    
-    for (NSDictionary *imageURL in JSON){
-        
-        NSDictionary *images = [imageURL objectForKey:@"images"];
-        NSDictionary *standardResolution = [images objectForKey:@"standard_resolution"];
-        NSString *urlString = [standardResolution objectForKey:@"url"];
-        
-        NSLog(@"%@", urlString);
-        
-        return urlString;
-    }
-   
-    return @"";
-}
 
+    NSArray *data = [JSON objectForKey:@"data"];
+    
+    
+    NSDictionary *lastObject = [data lastObject];
+    NSDictionary *images = [lastObject objectForKey:@"images"];
+    NSDictionary *standardResolution = [images objectForKey:@"standard_resolution"];
+    NSString *urlString = [standardResolution objectForKey:@"url"];
+    
+    NSLog(@"%@", urlString);
+    
+    return urlString;
+}
 
 // Perform the following manipulations to the provided dictionary
 //  • Remove the object for the key "carpet"
@@ -278,13 +275,13 @@
 
 // Create and return a block that takes 2 NSInteger parameters and
 // returns the sum
-- (NSInteger)createAndReturnABlockThatSumsTwoNumber
+- (NSInteger(^)(NSInteger a, NSInteger b))createAndReturnABlockThatSumsTwoNumber
 {
-    NSInteger (^addTwoNumbers)(NSInteger, NSInteger);
-    addTwoNumbers = ^(NSInteger a, NSInteger b) {
-        return a + b;
+    NSInteger (^sum)(NSInteger,NSInteger) = ^(NSInteger firstNumber, NSInteger secondNumber)
+    {
+        return (firstNumber + secondNumber);
     };
-    return 0;
+    return sum;
 }
 
 @end
