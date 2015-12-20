@@ -13,6 +13,7 @@
 		8D74A0701C0E059C00EDFE44 /* Written.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D74A06F1C0E059C00EDFE44 /* Written.m */; };
 		8D8BB4EC1C247C3E0049477C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D8BB4EB1C247C3E0049477C /* Main.storyboard */; };
 		8DDC2AF11C247A9200DDE6CB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DDC2AF01C247A9200DDE6CB /* AppDelegate.m */; };
+		F7E7092B1C27614A00BF241D /* APIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F7E7092A1C27614A00BF241D /* APIManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +43,8 @@
 		8DDC2AEF1C247A9200DDE6CB /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		8DDC2AF01C247A9200DDE6CB /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		9B43F112B5B6FE99DFCA9027 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		F7E709291C27614A00BF241D /* APIManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APIManager.h; sourceTree = "<group>"; };
+		F7E7092A1C27614A00BF241D /* APIManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APIManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +145,8 @@
 		8D625ED51C230DF600D0BE17 /* Written Assessment */ = {
 			isa = PBXGroup;
 			children = (
+				F7E709291C27614A00BF241D /* APIManager.h */,
+				F7E7092A1C27614A00BF241D /* APIManager.m */,
 				8D74A06E1C0E059C00EDFE44 /* Written.h */,
 				8D74A06F1C0E059C00EDFE44 /* Written.m */,
 			);
@@ -250,6 +255,7 @@
 				8D5AB0981C0CAB6B00792242 /* main.m in Sources */,
 				8DDC2AF11C247A9200DDE6CB /* AppDelegate.m in Sources */,
 				8D528D091C25A59900B07EBE /* Ewok.m in Sources */,
+				F7E7092B1C27614A00BF241D /* APIManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

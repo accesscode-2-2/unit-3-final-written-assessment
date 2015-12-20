@@ -7,6 +7,7 @@
 //
 
 #import "Written.h"
+#import "APIManager.h"
 
 @implementation Written
 
@@ -220,7 +221,27 @@
 
 - (NSString *)returnTheLastStandardResolutionImageURL:(NSDictionary *)JSON
 {
-    return @"";
+//    NSDictionary *images = [parse objectAtIndex:8];
+//    NSString *imageURL = images[@"standard_resolution"][@"url"];
+    
+    
+    NSArray *posts = JSON[@"data"];
+    
+    NSMutableArray *urls = [[NSMutableArray alloc]init];
+    
+    for(NSDictionary * post in posts) {
+        
+        NSDictionary *images = [post objectForKey:@"images"];
+        
+        NSDictionary *standard = [images objectForKey:@"standard_resolution"];
+        
+        NSString *urlString = [standard objectForKey:@"url"];
+        
+        [urls addObject:urlString];
+        
+}
+    return [urls lastObject];
+    
 }
 
 
@@ -285,7 +306,7 @@
 
 
 
-- (NSInteger)createAndReturnABlockThatSumsTwoNumber
+- (void)createAndReturnABlockThatSumsTwoNumber
 {
     
     NSInteger (^sum)(NSInteger, NSInteger) = ^(NSInteger firstValue, NSInteger secondValue)
@@ -293,9 +314,9 @@
         return firstValue + secondValue;
     };
     
-   NSInteger sum2 =  sum(33,4);
-    NSLog(@"SUM! %ld", sum2);
-    return sum2;
+    sum(3,5);
+    
+    
     
 }
 
