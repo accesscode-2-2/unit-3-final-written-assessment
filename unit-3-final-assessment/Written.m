@@ -306,7 +306,7 @@
 
 
 
-- (void)createAndReturnABlockThatSumsTwoNumber
+- (NSInteger(^)(NSInteger a, NSInteger b))createAndReturnABlockThatSumsTwoNumber
 {
     
     NSInteger (^sum)(NSInteger, NSInteger) = ^(NSInteger firstValue, NSInteger secondValue)
@@ -314,8 +314,8 @@
         return firstValue + secondValue;
     };
     
-    sum(3,5);
-    
+   
+    return sum;
     
     
 }
